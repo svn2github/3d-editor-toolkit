@@ -13,14 +13,28 @@ subject to the following restrictions:
 3. This notice may not be removed or altered from any source distribution.
 */
 
-#ifdef WIN32 //needed for glut.h
+#ifdef WIN32//for glut.h
 #include <windows.h>
 #endif
+
+//think different
+#if defined(__APPLE__) && !defined (VMDMESA)
+#include <OpenGL/gl.h>
+#include <OpenGL/glu.h>
+#include <GLUT/glut.h>
+#else
+#include <GL/gl.h>
+#include <GL/glu.h>
+#endif //APPLE
+
+
+
 #include "GLDebugFont.h"
 
 
 
-#include "GlutStuff.h"
+
+
 #include "GL_ShapeDrawer.h"
 #include "BulletCollision/CollisionShapes/btPolyhedralConvexShape.h"
 #include "BulletCollision/CollisionShapes/btTriangleMeshShape.h"
@@ -462,7 +476,7 @@ void GL_ShapeDrawer::drawOpenGL(btScalar* m, const btCollisionShape* shape, cons
 	}
 
 	glPushMatrix(); 
-	btglMultMatrix(m);
+	glMultMatrixf(m);
 
 
 	if (shape->getShapeType() == UNIFORM_SCALING_SHAPE_PROXYTYPE)
@@ -893,7 +907,7 @@ void GL_ShapeDrawer::drawOpenGL(btScalar* m, const btCollisionShape* shape, cons
 void		GL_ShapeDrawer::drawShadow(btScalar* m,const btVector3& extrusion,const btCollisionShape* shape,const btVector3& worldBoundsMin,const btVector3& worldBoundsMax)
 {
 	glPushMatrix(); 
-	btglMultMatrix(m);
+	glMultMatrixf(m);
 	if(shape->getShapeType() == UNIFORM_SCALING_SHAPE_PROXYTYPE)
 	{
 		const btUniformScalingShape* scalingShape = static_cast<const btUniformScalingShape*>(shape);
