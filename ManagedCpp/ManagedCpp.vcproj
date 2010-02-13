@@ -133,7 +133,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="opengl32.lib glu32.lib "
+				AdditionalDependencies="opengl32.lib glu32.lib"
 				LinkIncremental="1"
 				GenerateDebugInformation="true"
 				TargetMachine="1"
@@ -203,6 +203,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\PureCpp\GL_ShapeDrawerClone.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\PureCpp\GL_ShapeDrawerClone.h"
+				>
+			</File>
+			<File
 				RelativePath="..\PureCpp\MeshHelpers.cpp"
 				>
 			</File>
@@ -243,14 +251,6 @@
 				</File>
 				<File
 					RelativePath="..\PureCpp\MathCore\Matrix4x4.h"
-					>
-				</File>
-				<File
-					RelativePath="..\PureCpp\MathCore\Plane.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\PureCpp\MathCore\Plane.h"
 					>
 				</File>
 				<File
@@ -1623,26 +1623,6 @@
 				</File>
 				<File
 					RelativePath="..\bullet\src\LinearMath\btVector3.h"
-					>
-				</File>
-			</Filter>
-			<Filter
-				Name="OpenGL"
-				>
-				<File
-					RelativePath="..\bullet\Demos\OpenGL\GL_ShapeDrawer.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\bullet\Demos\OpenGL\GL_ShapeDrawer.h"
-					>
-				</File>
-				<File
-					RelativePath="..\bullet\Demos\OpenGL\GLDebugFont.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\bullet\Demos\OpenGL\GLDebugFont.h"
 					>
 				</File>
 			</Filter>
